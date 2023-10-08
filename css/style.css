@@ -1,0 +1,330 @@
+/* define global variables for use in CSS*/
+:root {
+  --reverse-color: #fff;
+  --work-tip-highlight: blue;
+  --work-tip-background: lightblue;
+  --nav-background: #13293d;
+  --header-backcolor:  palevioletred;
+  --tan: #d8a47f;
+  --border-color: orange;
+  --border-radius: 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* Define h1 font and style */
+h1 {
+  font-family: "Times New Roman";
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+}
+
+/* Define hero-banner photo and background image style*/
+.hero-banner img {
+  object-fit: fill;
+  opacity: 0.5;
+}
+
+.hero-banner .myself-photo {
+  position: absolute;
+  z-index: 100;
+  opacity: 1;
+}
+
+.hero-banner h2 {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Define header, left-heading(Name), right-heading(nav links) to use flex */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--header-backcolor);
+}
+
+.left-heading {
+  font-size: 30px;
+  justify-content:center;
+  align-items:center ;
+}
+
+.right-heading {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav a:hover {
+  background-color: var(--reverse-color);
+  color: var(--nav-background);
+}
+
+/* Define About, Work and Contact to use flex as the main display style */
+.page-wrapper {
+  display: flex;
+  border: 1px solid var(--border-color);
+}
+
+/* Define child page-section to be flex display style */
+.page-section {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+}
+
+/* Define About, Work and Contact headers display style */
+.page-section h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 28px;
+} 
+
+/* Define About, Work and Contact detail display style */
+.page-section .detail {
+  column-gap: 5px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Define Work details to be grid in order to show 5 projects display style */
+.page-section #work-detail {
+  display: grid;
+}
+
+#work-detail {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--work-tip-background);
+}
+
+/* Define tooltip be visible when mouse over project images*/
+#work-detail .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--work-tip-background);
+  color: var(--reverse-color);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#work-detail:hover .tooltiptext {
+  visibility: visible;
+}
+
+.page-section #work-detail .work-1 {
+  grid-area: work-1;
+}
+
+.page-section #work-detail .work-2 {
+  grid-area: work-2;
+}
+
+.page-section #work-detail .work-3 {
+  grid-area: work-3;
+}
+
+.page-section #work-detail .work-4 {
+  grid-area: work-4;
+}
+
+.page-section #work-detail .work-5 {
+  grid-area: work-5;
+}
+
+/* Define overriding CSS style used for laptop screen size */
+@media only screen and (max-width: 1366px) and (min-width: 769px) {
+
+  /* Define sizing attributes for hero-banner */
+  .hero-banner img {
+    width: 1349px;
+    height: 200px;
+  }
+
+  .hero-banner .myself-photo {
+    left: 10px;
+    top: 50px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-banner h2 {
+    left: 10px;
+    top: 180px;
+  }
+
+  /* Define header to use 3 rows style */
+  header {
+    flex-direction: row;
+    border: 5px solid var(--border-color);
+    height: 50px;
+  }
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  .page-section {
+    flex-direction: row;
+  }
+
+  .page-section h2 {
+    width: 200px;
+    font-size: 28px;
+    border-right: 1px solid var(--work-tip-highlight);
+    align-items: end;
+  } 
+
+  /* Dynamic assign width */
+  .page-section .detail {
+    padding: 5px;
+    width: calc(100vw - 200px);
+  }
+
+  /* Define grid style work detail for projects shown in one two two style */
+  .page-section #work-detail {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "work-1 work-1"
+    "work-2 work-3"
+    "work-4 work-5";
+  }
+
+  /* Assign project width for laptop sizing */ 
+  .page-section #work-detail .work-1 {
+    width:1024px;
+  }
+
+  .page-section #work-detail .work-2 {
+    width:510px;
+  }
+
+  .page-section #work-detail .work-3 {
+    width:510px;
+  }
+
+  .page-section #work-detail .work-4 {
+    width:510px;
+  }
+
+  .page-section #work-detail .work-5 {
+    width:510px;
+  }
+}
+
+/* Define CSS style used for mobile device size */
+@media only screen and (max-width: 768px) {
+
+  /* Define sizing attributes for hero-banner */
+  .hero-banner img {
+    top: 90px;
+    width: calc(100vw - 10px);
+    height: 100px;
+  }
+
+  .hero-banner .myself-photo {
+    left: 10px;
+    top: 90px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-banner h2 {
+    left: 10px;
+    top: 170px;
+  }
+
+  /* Define header to use 2 columns style */
+  header {
+    flex-direction: column;
+    border: 5px solid var(--border-color);
+    height: 90px;
+  }
+
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  .page-section {
+    flex-direction: column;
+  }
+
+  .page-section h2 {
+    font-size: 18px;
+    border-bottom: 1px solid var(--work-tip-highlight);
+    align-items: center;
+  } 
+
+  .page-section .detail {
+    font-size: 12px;
+  }
+
+  /* Define work details to be under 5 rows style */
+  .page-section #work-detail {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "work-1"
+    "work-2"
+    "work-3"
+    "work-4" 
+    "work-5";
+  }
+
+  /* Assign project width for mobile device sizing */ 
+  .page-section #work-detail .work-1 {
+    width:500px;
+  }
+
+  .page-section #work-detail img {
+    width: 100vw;
+  }
+
+  .page-section #work-detail .work-2 {
+    width:500px;
+  }
+
+  .page-section #work-detail .work-3 {
+    width:500px;
+  }
+
+  .page-section #work-detail .work-4 {
+    width:500px;
+  }
+
+  .page-section #work-detail .work-5 {
+    width:500px;
+  }
+}
+
