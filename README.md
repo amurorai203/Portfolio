@@ -26,8 +26,8 @@ N/A
       <td>Mobile device</td>
     </tr>
     <tr>
-      <td><img src="https://amurorai203.github.io/Portfolio/assets/images/portfolio-screen-dump-laptop.jpg" width="500"></td>
-      <td><img src="https://amurorai203.github.io/Portfolio/assets/images/portfolio-screen-dump-mobile.jpg" width="500"></td>
+      <td><img src="https://amurorai203.github.io/Portfolio/images/portfolio-screen-dump-laptop.jpg" width="500"></td>
+      <td><img src="https://amurorai203.github.io/Portfolio/images/portfolio-screen-dump-mobile.jpg" width="500"></td>
     </tr>
   </tbody>
 </table>
