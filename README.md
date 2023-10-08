@@ -39,6 +39,5 @@ References are followed by W3C listed below:
 
 ## License
 
-<<<<<<< HEAD
 Code released under [MIT license](https://opensource.org/licenses/MIT).
 
