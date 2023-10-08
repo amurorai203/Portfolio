@@ -41,6 +41,4 @@ References are followed by W3C listed below:
 
 <<<<<<< HEAD
 Code released under [MIT license](https://opensource.org/licenses/MIT).
-=======
-Code released under [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> 961b541706f7820a9e0e6e8e2beb2a12fa71d47c
+
