@@ -44,6 +44,7 @@ p {
 .hero-banner img {
   object-fit: fill;
   opacity: 0.5;
+  background-size: 100vh 100vw;
 }
 
 .hero-banner .myself-photo {
@@ -112,6 +113,7 @@ header nav a:hover {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: calc(100vw - 10px);
 }
 
 /* Define Work details to be grid in order to show 5 projects display style */
@@ -169,6 +171,7 @@ header nav a:hover {
   .hero-banner img {
     width: 1349px;
     height: 200px;
+    width: calc(100vw - 10px);
   }
 
   .hero-banner .myself-photo {
@@ -327,4 +330,3 @@ header nav a:hover {
     width:500px;
   }
 }
-
